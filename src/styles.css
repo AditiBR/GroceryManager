@@ -2,3 +2,17 @@
 .strike{
     text-decoration: line-through;
 }
+
+body {
+    font-family: 'Roboto', sans-serif;  
+    font-size: 1rem;  
+    margin: 0;  
+    color: #eaeaea;  
+    background-color:black;  
+  }
+
+  ::placeholder{
+      color:white;
+      font-family: cursive;
+    
+}
