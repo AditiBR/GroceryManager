@@ -21,6 +21,14 @@ export class AppGroceryComponent implements OnInit {
 
   onClick()
   {
+    if(!this.task.name.trim())
+    {
+      return;
+    }
+    if(this.tasks.includes(this.task.name))
+    {
+      
+    }
     if(this.task.id === 0){
       this.tasks.push({
         id: (new Date()).getTime(),
