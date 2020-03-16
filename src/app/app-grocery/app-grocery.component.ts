@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppGroceryComponent implements OnInit {
   task = {
-    name:'',
-    id:0
+    name:''    
   };
   tasks =[];
   constructor() { }
@@ -22,22 +21,19 @@ export class AppGroceryComponent implements OnInit {
     if(!this.task.name.trim())
     {
       this.task = {
-        name: '',
-        id: 0
+        name: ''       
     };  
       return;
     }   
   
    // Add first item to the list
     if(this.tasks.length == 0){
-      this.tasks.push({
-        id: (new Date()).getTime(),
-        name: this.task.name,
+      this.tasks.push({       
+        name: this.task.name.trim(),
         strike: false
         });
         this.task = {
-          name: '',
-          id: 0
+          name: ''         
       };
     
         return;
@@ -47,7 +43,7 @@ export class AppGroceryComponent implements OnInit {
     var addtoList = true;    
   
     for(var i=0;i<this.tasks.length;i ++){
-        if(this.tasks[i].name.toLowerCase() == this.task.name.toLowerCase()){
+        if(this.tasks[i].name.trim().toLowerCase() == this.task.name.trim().toLowerCase()){
               if(!this.tasks[i].strike)
               {
                   addtoList= false;
@@ -55,15 +51,13 @@ export class AppGroceryComponent implements OnInit {
         }         
       }
       if(addtoList){
-          this.tasks.push({
-                        id: (new Date()).getTime(),
+          this.tasks.push({                       
                         name: this.task.name,
                          strike: false
                       });
       } 
     this.task = {
-      name: '',
-      id: 0
+      name: ''     
     };    
   }
 
@@ -75,7 +69,7 @@ export class AppGroceryComponent implements OnInit {
   //Delete an existing item in the list
   onDelete(item){
     for(var i=0;i<this.tasks.length;i ++){
-      if(this.tasks[i].id == item.id){
+      if(this.tasks[i].name == item.name){
         this.tasks.splice(i,1);
         this.task.name='';
         break;
@@ -87,7 +81,7 @@ export class AppGroceryComponent implements OnInit {
   onStrike(item)
   {
     for(var i=0;i<this.tasks.length;i++){
-      if(this.tasks[i].id == item.id){{
+      if(this.tasks[i].name == item.name){{
         if(this.tasks[i].strike){
           this.tasks[i].strike = false;
         } else {

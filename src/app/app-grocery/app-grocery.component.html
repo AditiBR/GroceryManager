@@ -1,5 +1,4 @@
-<div>
-  
+<div>  
     <mat-toolbar color="primary"  style="margin-left: 40rem; font-family: cursive; font-size:xx-large">Grocery list manager</mat-toolbar>
     <div class="row" style="margin-top: 40px;">
          <div class="col-xs-6 col-md-4">          
@@ -8,19 +7,15 @@
                 <span class="input-group-btn">
                     <button class="btn btn-info" type="button" (click) = "onClick()" style="background-color:gray; font-family: cursive;">Add item</button>
                 </span>
-            </div>
-             
-           
-        </div>
+            </div>            
+           </div>
     </div>
    
     <ul class="list-group" style="margin-left: 40rem;">
         <li *ngFor="let task of tasks" class="list-group-item" style="background-color: black;" >
             <span (click) = "onStrike(task)" [ngClass] ="{'strike': task.strike}" style="color: white; font-family: cursive; font-size:x-large;"> {{ task.name }} </span> 
             <mat-icon (click) = "onEdit(task)">edit</mat-icon>
-            <mat-icon (click)= "onDelete(task)">delete</mat-icon>
-         
+            <mat-icon (click)= "onDelete(task)">delete</mat-icon>         
         </li>
-    </ul>
- 
+    </ul> 
 </div>
